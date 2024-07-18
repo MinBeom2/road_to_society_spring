@@ -1,6 +1,7 @@
 package config;
 
 import aspects.LoggingAspect;
+import aspects.SecurityAspect;
 import org.aspectj.lang.annotation.Around;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -15,7 +16,10 @@ public class ProjectConfig {
     @Bean
     public LoggingAspect aspect(){
         return new LoggingAspect();
+    }
 
-
+    @Bean
+    public SecurityAspect securityAspect(){
+        return new SecurityAspect();
     }
 }
